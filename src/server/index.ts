@@ -1,6 +1,7 @@
-export { Controller } from "./controller.decorator";
-export { CreateHandlerDecorator } from "./handler.decorator";
 export { registerControllers } from "./register";
 export { route } from "./route";
-export { Delete, Get, Patch, Post, Put } from "./routes.decorator";
-export { CreateControllerHandlerDecorator } from "./controllerHandler.decorator";
+export { Controller } from "./decorators/controller";
+export { CreateHandlerDecorator } from "./decorators/handler";
+export { Delete, Get, Patch, Post, Put } from "./decorators/routes";
+export { CreateControllerHandlerDecorator } from "./decorators/controllerHandler";
+export { Pure } from "./decorators/pure";

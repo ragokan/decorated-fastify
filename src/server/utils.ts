@@ -11,8 +11,8 @@ export const getMeta = (target: any): IMeta => {
   return target.__decorator_meta__;
 };
 
-export const routeMetahandler =
-  <T>(method: HTTPMethods, path: string, propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+export const createRouteDecorator =
+  <T>(method: HTTPMethods, path: string, ...propertyDecorators: PropertyDecorator[]): PropertyDecorator =>
   (target, functionKey) => {
     const meta = getMeta(target as ITarget<T>);
     meta.routes[functionKey] = {
@@ -21,5 +21,5 @@ export const routeMetahandler =
       functionKey,
       preHandlers: [],
     };
-    propertyDecorators?.forEach((decorator) => decorator(target, functionKey));
+    propertyDecorators.forEach((decorator) => decorator(target, functionKey));
   };

@@ -15,6 +15,7 @@ export interface IMeta {
       method: "GET" | "POST" | "PUT";
       functionKey: PropertyKey;
       preHandlers: preHandlerHookHandler[];
+      pure?: boolean;
     };
   };
 }

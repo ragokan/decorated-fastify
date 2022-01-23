@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import type { ITarget } from "../server/types";
 
-export class Provider {
+export class FastDI {
   private static _services: { [key: string]: any } = {};
 
   static create<T>(target: ITarget<T>): T {

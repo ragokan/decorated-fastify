@@ -5,9 +5,9 @@ import {
   preHandlerHookHandler,
   RequestGenericInterface,
 } from "fastify";
-import { GenericClassDecorator } from "..";
-import { IHookHandler, ITarget } from "./types";
-import { getMeta } from "./utils";
+import { GenericClassDecorator } from "../..";
+import { IHookHandler, ITarget } from "../types";
+import { getMeta } from "../utils";
 
 export const CreateControllerHandlerDecorator =
   <T, G extends RequestGenericInterface = RequestGenericInterface>(handler: IHookHandler<T | undefined, G>) =>

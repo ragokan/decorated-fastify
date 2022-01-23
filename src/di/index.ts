@@ -1,2 +1,2 @@
 export { type GenericClassDecorator, Service } from "./decorators";
-export { Provider } from "./provider";
+export { FastDI } from "./root";
