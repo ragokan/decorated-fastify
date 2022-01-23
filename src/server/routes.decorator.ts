@@ -1,7 +1,12 @@
 import { routeMetahandler } from "./utils";
 
-export const Get = (url: string = ""): PropertyDecorator => routeMetahandler("GET", url);
-export const Post = (url: string = ""): PropertyDecorator => routeMetahandler("POST", url);
-export const Patch = (url: string = ""): PropertyDecorator => routeMetahandler("PATCH", url);
-export const Put = (url: string = ""): PropertyDecorator => routeMetahandler("PUT", url);
-export const Delete = (url: string = ""): PropertyDecorator => routeMetahandler("DELETE", url);
+export const Get = (url: string = "", propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+  routeMetahandler("GET", url, propertyDecorators);
+export const Post = (url: string = "", propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+  routeMetahandler("POST", url, propertyDecorators);
+export const Patch = (url: string = "", propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+  routeMetahandler("PATCH", url, propertyDecorators);
+export const Put = (url: string = "", propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+  routeMetahandler("PUT", url, propertyDecorators);
+export const Delete = (url: string = "", propertyDecorators: PropertyDecorator[] | null = null): PropertyDecorator =>
+  routeMetahandler("DELETE", url, propertyDecorators);
