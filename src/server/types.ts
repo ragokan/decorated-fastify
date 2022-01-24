@@ -1,6 +1,8 @@
-import {
+import type {
   FastifyReply,
   FastifyRequest,
+  FastifySchema,
+  FastifySchemaCompiler,
   HookHandlerDoneFunction,
   preHandlerHookHandler,
   RequestGenericInterface,
@@ -16,6 +18,8 @@ export interface IMeta {
       functionKey: PropertyKey;
       preHandlers: preHandlerHookHandler[];
       pure?: boolean;
+      schema?: FastifySchema;
+      validatorCompiler?: FastifySchemaCompiler<FastifySchema>;
     };
   };
 }

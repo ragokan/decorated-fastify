@@ -22,6 +22,8 @@ export function registerControllers(data: {
         url: (options.basePath ?? "") + controller.__decorator_meta__!.url + val.url,
         preHandler: val.preHandlers,
         handler: (controller as any)[val.functionKey],
+        schema: val.schema,
+        validatorCompiler: val.validatorCompiler,
       });
     });
   });
