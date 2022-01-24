@@ -6,11 +6,11 @@ export class FastDI {
 
   static resolve<T>(target: ITarget<T>): T {
     const services: ITarget<any>[] = Reflect.getMetadata("design:paramtypes", target) || [];
-    const injections = services.map(this.service);
+    const injections = services.map(FastDI.service);
     return new target(...injections);
   }
 
   static service<T>(target: ITarget<T>): T {
-    return (this._services[target.name] ??= this.resolve<any>(target));
+    return (FastDI._services[target.name] ??= FastDI.resolve<any>(target));
   }
 }
