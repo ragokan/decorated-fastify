@@ -32,3 +32,7 @@ export type IHookHandler<Payload, RequestBody extends RequestGenericInterface = 
   done: HookHandlerDoneFunction,
   payload: Payload
 ) => void;
+
+export interface IRegisterOptions {
+  basePath?: string;
+}

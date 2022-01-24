@@ -1,9 +1,14 @@
 import { FastifyInstance } from "fastify";
-import { getGlobalOption } from "..";
 import { FastDI } from "../di/root";
-import { IController } from "./types";
+import { IController, IRegisterOptions } from "./types";
 
-export function registerControllers(instance: FastifyInstance, controllers: Array<{ new (...args: any[]): any }> = []) {
+export function registerControllers(data: {
+  instance: FastifyInstance;
+  controllers?: Array<{ new (...args: any[]): any }>;
+  options?: IRegisterOptions;
+}) {
+  const { controllers = [], instance, options = {} } = data;
+
   controllers.forEach(function (target) {
     const controller = FastDI.create<IController>(target);
 
@@ -14,7 +19,7 @@ export function registerControllers(instance: FastifyInstance, controllers: Arra
 
       instance.route({
         method: val.method,
-        url: (getGlobalOption("basePath") ?? "") + controller.__decorator_meta__!.url + val.url,
+        url: (options.basePath ?? "") + controller.__decorator_meta__!.url + val.url,
         preHandler: val.preHandlers,
         handler: (controller as any)[val.functionKey],
       });
