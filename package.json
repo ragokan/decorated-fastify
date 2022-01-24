@@ -6,8 +6,7 @@
   "scripts": {
     "start": "tsup src/index.ts --onSuccess 'node dist/index.js'",
     "dev": "tsup src/index.ts --silent --watch --onSuccess 'node dist/index.js'",
-    "build": "tsup src/index.ts --minify",
-    "build:npm": "tsc"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

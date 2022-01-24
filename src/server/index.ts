@@ -5,3 +5,4 @@ export { CreateHandlerDecorator } from "./decorators/handler";
 export { Delete, Get, Patch, Post, Put } from "./decorators/routes";
 export { CreateControllerHandlerDecorator } from "./decorators/controllerHandler";
 export { Pure } from "./decorators/pure";
+export { Validate } from "./decorators/validate";
