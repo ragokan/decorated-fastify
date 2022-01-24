@@ -10,7 +10,7 @@ export function registerControllers(data: {
   const { controllers = [], instance, options = {} } = data;
 
   controllers.forEach(function (target) {
-    const controller = FastDI.create<IController>(target);
+    const controller = FastDI.resolve<IController>(target);
 
     Object.values(controller.__decorator_meta__!.routes).forEach(function (val) {
       if (controller.__decorator_meta__!.globalHandler && !val.pure) {
