@@ -11,6 +11,6 @@ export class FastDI {
   }
 
   static service<T>(target: ITarget<T>): T {
-    return (FastDI._services[target.name] ??= FastDI.resolve<any>(target));
+    return (FastDI._services[target.name] ??= FastDI.resolve<T>(target));
   }
 }
