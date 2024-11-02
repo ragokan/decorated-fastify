@@ -1,12 +1,13 @@
 {
   "name": "decorated-fastify",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "tsup src/index.ts --onSuccess 'node dist/index.js'",
     "dev": "tsup src/index.ts --silent --watch --onSuccess 'node dist/index.js'",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",
